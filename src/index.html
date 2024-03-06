@@ -1,19 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <title>toDo</title>
 </head>
+
 <body>
     <div class="add-new">+</div>
     <div class="wrapper">
         <div class="side-bar">
+            <div class="profile">
+                <div class="profile-picture"></div>
+                <div class="profile-name">USER</div>
+            </div>
             <nav class="primary-nav">
                 <ul>
-                    <li class="search">search</li>
-                    <li class="today">today</li>
-                    <li class="upcoming">upcoming</li>
+                    <li class="search">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                <path
+                                    d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span>
+                            Search
+                        </span>
+                    </li>
+                    <li class="inbox">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <title>inbox</title>
+                                <path
+                                    d="M6,4H17C18.66,4 20,5.34 20,7V18C20,19.66 18.66,21 17,21H6C4.34,21 3,19.66 3,18V7C3,5.34 4.34,4 6,4M6,5C4.9,5 4,5.9 4,7V15H9V15.5C9,16.88 10.12,18 11.5,18C12.88,18 14,16.88 14,15.5V15H19V7C19,5.9 18.1,5 17,5H6M4,18C4,19.1 4.9,20 6,20H17C18.1,20 19,19.1 19,18V16H14.96C14.72,17.7 13.26,19 11.5,19C9.74,19 8.28,17.7 8.04,16H4V18Z" />
+                            </svg>
+                        </span>
+                        <span>
+                            inbox
+                        </span>
+                    </li>
+                    <li class="today">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <title>calendar</title>
+                                <path
+                                    d="M7,2H8C8.55,2 9,2.45 9,3V4H14V3C14,2.45 14.45,2 15,2H16C16.55,2 17,2.45 17,3V4C18.66,4 20,5.34 20,7V18C20,19.66 18.66,21 17,21H6C4.34,21 3,19.66 3,18V7C3,5.34 4.34,4 6,4V3C6,2.45 6.45,2 7,2M15,4H16V3H15V4M8,4V3H7V4H8M6,5C4.9,5 4,5.9 4,7V8H19V7C19,5.9 18.1,5 17,5H6M4,18C4,19.1 4.9,20 6,20H17C18.1,20 19,19.1 19,18V9H4V18M12,13H17V18H12V13M13,14V17H16V14H13Z" />
+                            </svg>
+                        </span>
+                        <span>today</span>
+                    </li>
+                    <li class="upcoming">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <title>clock</title>
+                                <path
+                                    d="M11.5,3C16.75,3 21,7.25 21,12.5C21,17.75 16.75,22 11.5,22C6.25,22 2,17.75 2,12.5C2,7.25 6.25,3 11.5,3M11.5,4C6.81,4 3,7.81 3,12.5C3,17.19 6.81,21 11.5,21C16.19,21 20,17.19 20,12.5C20,7.81 16.19,4 11.5,4M11,7H12V12.42L16.7,15.13L16.2,16L11,13V7Z" />
+                            </svg>
+                        </span>
+                        <span>
+                            Upcoming
+                        </span>
+                    </li>
                 </ul>
             </nav>
             <nav class="projects">
@@ -22,6 +76,8 @@
                 </ul>
             </nav>
         </div>
+        <div class="main"></div>
     </div>
 </body>
+
 </html>

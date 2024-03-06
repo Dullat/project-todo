@@ -1,5 +1,5 @@
 import './css/reset.scss';
-import './css/main.scss';
+import './css/index.scss';
 
 import {CreateTodo} from './js/create.js';
 import {todoCreation, addListBox} from './js/uiCreateTodo.js';
