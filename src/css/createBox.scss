@@ -4,6 +4,7 @@
 
     display: grid;
     width: auto;
+    grid-template-rows: min-content;
     background-color: aliceblue;
 
     .box-header{
@@ -15,4 +16,13 @@
         font-size: 1.2rem;
         background: white;
     }
+
+    .box[active]{
+        background-color: aquamarine;
+    }
+}
+
+.close-box {
+    position: absolute;
+    top: 1rem;
 }

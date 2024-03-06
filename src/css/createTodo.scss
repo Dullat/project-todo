@@ -1,0 +1,36 @@
+.todoCreationForm {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    height: 100%;
+    padding: 1rem;
+    background-color: bisque;
+
+    .checklists-container {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        .check-list-box {
+            width: 100%;
+
+            display: flex;
+            gap: 1rem;
+
+            .checkList {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    .bottom{
+        margin-top: auto;
+
+        display: flex;
+        align-items: center;
+
+        button {
+            margin-left: auto;
+        }
+    }
+}

@@ -1,15 +1,11 @@
-function CreateTodo(title, description, dueDate, priority, notes = [], checkList = []) {
+function CreateTodo(title, description, dueDate, priority, note, checkList = []) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.notes = notes;
+    this.note = note;
     this.checkList = checkList;
 }
-
-CreateTodo.prototype.addNote = function (note) {
-    this.notes.push(note);
-};
 
 CreateTodo.prototype.addCheckList = function (item) {
     this.checkList.push({ item: item, completed: false });
@@ -21,8 +17,8 @@ CreateTodo.prototype.setCheckList = function (index) {
     }
 };
 
-CreateTodo.prototype.log = function () {
-    console.log({ title: this.title, date: this.dueDate });
+CreateTodo.prototype.al = function (p) {
+    console.log(p);
 };
 
-module.expoets = {CreateTodo}
+module.exports = {CreateTodo}

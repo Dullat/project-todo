@@ -1,14 +1,20 @@
-let todoCreation = document.createElement('form');
+let todoCreationForm = document.createElement('form');
 let checkList = document.createElement('div');
+let clicked;
 
-todoCreation.classList.add('todoCreation');
+todoCreationForm.classList.add('todoCreationForm');
 checkList.classList.add('check-list-box');
 
-todoCreation.innerHTML = `
+todoCreationForm.innerHTML = `
 <input type="text" class="title" placeholder="title: payBills">
 <input type="text" class="description" placeholder="description">
 <textarea></textarea>
 <div class="checklists-container"></div>
+<div class="priority">
+    <div class="low prio" data-value="low">Low</div>
+    <div class="med prio" data-value="med">Med</div>
+    <div class="high prio" data-value="high">High</div>
+</div>
 
 <div class="bottom">
     <div class="date">
@@ -29,4 +35,23 @@ function addListBox() {
     document.querySelector('.checklists-container').appendChild(checkList.cloneNode(true));
 }
 
-module.exports = {todoCreation, addListBox};
+function checkPrio() {
+    let prios = document.querySelectorAll('.prio');
+    prios.forEach(e => {
+        e.addEventListener('click', () => {
+            prios.forEach(l => {
+                l.removeAttribute('active');
+                l.style.background = 'white';
+            })
+            e.setAttribute('active','')
+            e.style.background = 'red';
+            clicked = e;
+        })
+    })
+}
+
+function sendPrio(){
+    return clicked.getAttribute("data-value");
+}
+
+module.exports = { todoCreationForm, addListBox, checkPrio, sendPrio };
