@@ -1,5 +1,6 @@
 import './css/reset.scss';
 import './css/index.scss';
+import './css/createBox.scss';
 
 import {CreateTodo} from './js/create.js';
 import {todoCreation, addListBox} from './js/uiCreateTodo.js';
@@ -11,6 +12,6 @@ let addBtn = document.querySelector('.add-new');
 let createList;
 
 addBtn.addEventListener('click', () => {
-    document.body.appendChild(box);
+    document.querySelector('.wrapper').appendChild(box);
     document.querySelector('.box-menu').appendChild(todoCreation);
 })
