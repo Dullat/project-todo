@@ -6,11 +6,13 @@ import './css/createTodo.scss';
 import { CreateTodo } from './js/create.js';
 import { todoCreationForm, addListBox, checkPrio, sendPrio} from './js/uiCreateTodo.js';
 import { box } from './js/uiCreateBox.js';
+import {createTaskUi} from './js/inbox.js';
 window.addListBox = addListBox;
 
 let addBtn = document.querySelector('.add-new');
 let createToDo = document.querySelector('.todoCreationForm');
 let wrapper = document.querySelector('.wrapper');
+let main = document.querySelector('.main');
 let createList;
 let todoArray = [];
 let i = 0;
@@ -42,6 +44,8 @@ todoCreationForm.addEventListener('submit', (e) => {
     if (box.parentElement === wrapper) {
         wrapper.removeChild(box);
     }
+
+    createTaskUi(todoArray, main);
     
     i++;
 });
