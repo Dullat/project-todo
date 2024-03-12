@@ -1,5 +1,4 @@
 function createTaskUi(todoArray, main) {
-
     if (main.firstElementChild) {
         main.removeChild(main.firstElementChild);
     }
@@ -12,12 +11,10 @@ function createTaskUi(todoArray, main) {
         todo.dueDate = new Date(todo.dueDate);
     });
 
-    todoArray.sort((a, b) => a.dueDate - b.dueDate);
+    let sortedArray = todoArray.slice().sort((a, b) => a.dueDate - b.dueDate);
     const options = { day: 'numeric', month: 'short' };
 
-    console.log(todoArray);
-
-    todoArray.forEach((element) => {
+    sortedArray.forEach((element, index) => {
         let taskDiv = document.createElement('div');
         taskDiv.classList.add('task');
 
@@ -25,14 +22,59 @@ function createTaskUi(todoArray, main) {
         <div class="top">
             <p class="title">${element.title}</p>
             <p class="date">${element.dueDate.toLocaleDateString('en-US', options)}</p>
-            <button class="delete-task">del</button>
+            <p class="priority">${element.priority}</p>
         </div>
-        `
+        <div class="hidden">
+            <button class="delete-task">del</button>
+            <div class="check-lists"></div>
+            <div class="note">${element.note}</div>
+        </div>
+        `;
 
-        inboxLayout.appendChild(taskDiv); // Append the task div to the inbox layout
+        inboxLayout.appendChild(taskDiv);
+
+        element.checkList.forEach((el, i) => {
+            let bar = document.createElement('div');
+            bar.classList.add('list');
+            bar.innerHTML = `
+            <div>${el}</div>
+            <del index="${i}" class="remove-box">x</del>
+            `;
+            taskDiv.querySelector('.check-lists').appendChild(bar);
+        });
     });
 
-    main.appendChild(inboxLayout); // Append the inboxLayout to the main container
+    main.appendChild(inboxLayout);
+
+    // Event delegation for button clicks
+    inboxLayout.addEventListener("click", (event) => {
+        if (event.target.tagName === 'BUTTON') {
+            // Find the index of the clicked element in the DOM
+            let index = Array.from(inboxLayout.querySelectorAll('.task')).indexOf(event.target.closest('.task'));
+            if (index !== -1) {
+                todoArray.splice(index, 1);
+                createTaskUi(todoArray, main);
+            }
+        }
+
+        if (event.target.tagName === 'DEL') {
+            // Find the index of the clicked element in the DOM
+            let taskDiv = event.target.closest('.task');
+            if (taskDiv) {
+                let index = Array.from(taskDiv.parentNode.children).indexOf(taskDiv);
+                let taskIndex = Array.from(taskDiv.querySelectorAll('del')).indexOf(event.target);
+                if (index !== -1 && taskIndex !== -1) {
+                    todoArray[index].checkList.splice(taskIndex, 1);
+                    createTaskUi(todoArray, main);
+                }
+            }
+        }
+
+
+        if (event.target.closest('.task')) {
+            event.target.classList.toggle('active');
+        }
+    });
 }
 
 module.exports = { createTaskUi };

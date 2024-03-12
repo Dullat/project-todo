@@ -6,7 +6,7 @@ todoCreationForm.classList.add('todoCreationForm');
 checkList.classList.add('check-list-box');
 
 todoCreationForm.innerHTML = `
-<input type="text" class="title" placeholder="title: payBills">
+<input type="text" id="title" class="title" placeholder="title: payBills">
 <input type="text" class="description" placeholder="description">
 <textarea></textarea>
 <div class="checklists-container"></div>
