@@ -99,3 +99,9 @@ primaryNav.querySelectorAll('li').forEach(e => {
         e.children[0].style.fill = 'green';
     })
 })
+
+///
+
+box.querySelectorAll('.note-creation').addEventListener('click', () => {
+    box.querySelectorAll('.note-creation').style.color = 'green';
+})
