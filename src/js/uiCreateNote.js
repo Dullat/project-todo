@@ -1,11 +1,11 @@
-let createNote = document.createElement('form');
+let createNoteForm = document.createElement('form');
 
-createNote.classList.add('create-note');
+createNoteForm.classList.add('create-note');
 
-createNote.innerHTML = `
-<input type="text" class="title">
+createNoteForm.innerHTML = `
+<input type="text" class="title" placeholder="title">
 <textarea></textarea>
 <button type="submit">Create</button>
 `;
 
-module.exports = {createNote};
+module.exports = {createNoteForm};
