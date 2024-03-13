@@ -159,3 +159,8 @@ function navStyle() {
         e.children[0].style.fill = 'black';
     })
 }
+
+
+document.querySelector('.burger').addEventListener('click', () => {
+    document.querySelector('.side-bar').classList.toggle('active');
+})
