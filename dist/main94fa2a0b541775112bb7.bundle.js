@@ -253,7 +253,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `body {
-  max-width: 1200px; }
+  min-height: 100dvh; }
 
 .wrapper {
   position: relative;
@@ -274,6 +274,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   background: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
   background-size: cover;
   position: fixed;
+  display: none;
   top: 1rem;
   right: 1rem;
   height: 30px;
@@ -327,6 +328,13 @@ svg {
   font-weight: 600;
   color: green; }
 
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 1fr 5fr; }
+  .add-new {
+    bottom: 2rem;
+    right: 2rem; } }
+
 @media screen and (max-width: 1000px) {
   .wrapper {
     grid-template-columns: 1fr; }
@@ -338,12 +346,14 @@ svg {
   .side-bar.active {
     transform: translateX(0%); }
   .add-new {
-    position: fixed; } }
+    position: fixed; }
+  .burger {
+    display: unset; } }
 
 @media screen and (max-width: 600px) {
   .side-bar {
     inset: 0 40% 0 0; } }
-`, "",{"version":3,"sources":["webpack://./src/css/index.scss"],"names":[],"mappings":"AAAA;EACI,iBAAiB,EAAA;;AAGrB;EACI,kBAAkB;EAClB,2BAA2B;EAE3B,aAAa;EACb,8BAA8B,EAAA;;AAGlC;EACI,yBAAoC,EAAA;;AAGxC;EACI,kBAAkB;EAClB,YAAY;EACZ,WAAW;EACX,eAAe,EAAA;;AAGnB;EACI,mDAA2C;EAC3C,sBAAsB;EACtB,eAAe;EACf,SAAS;EACT,WAAW;EACX,YAAY;EACZ,eAAe;EACf,eAAe,EAAA;;AAGnB;EACI,WAAW;EACX,eAAe,EAAA;;AAInB;EACI,aAAa;EACb,sBAAsB;EAEtB,eAAe;EACf,gBAAgB;EAChB,iBAAiB;EACjB,yBAAoC,EAAA;EAPxC;IAUQ,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,aAAa;IACb,yBAAkC,EAAA;IAd1C;MAiBY,WAAW;MACX,eAAe;MACf,uBAAuB;MACvB,oBAAoB,EAAA;IApBhC;MAwBY,iBAAiB;MACjB,gBAAgB,EAAA;EAzB5B;IA8BQ,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,kBAAkB,EAAA;IAjC1B;MAoCY,aAAa;MACb,mBAAmB;MACnB,UAAU;MACV,eAAe,EAAA;EAvC3B;IA4CQ,aAAa,EAAA;IA5CrB;MA+CY,iBAAiB;MACjB,WAAW,EAAA;;AAKvB;EACI,cAAc;EACd,iBAAiB;EACjB,gBAAgB;EAChB,YAAY,EAAA;;AAGhB;EAEI;IACI,0BAA0B,EAAA;EAG9B;IACI,eAAe;IACf,gBAAgB;IAChB,4BAA4B;IAC5B,mBAAmB,EAAA;EAGvB;IACI,yBAAyB,EAAA;EAG7B;IACI,eAAe,EAAA,EAClB;;AAGL;EACI;IACI,gBAAgB,EAAA,EACnB","sourcesContent":["body {\n    max-width: 1200px;\n}\n\n.wrapper {\n    position: relative;\n    background-color: aliceblue;\n\n    display: grid;\n    grid-template-columns: 1fr 3fr;\n}\n\n.main {\n    background-color: rgb(253, 253, 253);\n}\n\n.add-new {\n    position: absolute;\n    bottom: 1rem;\n    right: 1rem;\n    cursor: pointer;\n}\n\n.burger {\n    background: url(../imgs/icons8-menu-50.png);\n    background-size: cover;\n    position: fixed;\n    top: 1rem;\n    right: 1rem;\n    height: 30px;\n    aspect-ratio: 1;\n    cursor: pointer;\n}\n\nsvg {\n    width: 35px;\n    aspect-ratio: 1;\n}\n\n\n.side-bar {\n    display: flex;\n    flex-direction: column;\n\n    font-size: 1rem;\n    font-weight: 600;\n    min-height: 100vh;\n    background-color: rgb(235, 235, 235);\n\n    .profile {\n        display: flex;\n        align-items: center;\n        gap: 1rem;\n        padding: 1rem;\n        background-color: rgb(0, 255, 170);\n\n        .profile-picture{\n            width: 50px;\n            aspect-ratio: 1;\n            background-color: beige;\n            border-radius: 100vh;\n        }\n\n        .profile-name{\n            font-size: 1.3rem;\n            font-weight: 600;\n        }\n    }\n\n    ul {\n        display: flex;\n        flex-direction: column;\n        gap: 1rem;\n        padding: 1rem 1rem;\n\n        li {\n            display: flex;\n            align-items: center;\n            gap: .5rem;\n            cursor: pointer;\n        }\n    }\n\n    .projects {\n        padding: 1rem;\n\n        p {\n            font-size: 1.2rem;\n            opacity: .5;\n        }\n    }\n}\n\n.inbox-header {\n    padding: .5rem;\n    font-size: 1.2rem;\n    font-weight: 600;\n    color: green;\n}\n\n@media screen and (max-width: 1000px){\n\n    .wrapper {\n        grid-template-columns: 1fr;\n    }\n\n    .side-bar {\n        position: fixed;\n        inset: 0 60% 0 0;\n        transform: translateX(-100%);\n        transition: all .5s;\n    }\n\n    .side-bar.active {\n        transform: translateX(0%);\n    }\n\n    .add-new {\n        position: fixed;\n    }\n}\n\n@media screen and (max-width: 600px){\n    .side-bar{\n        inset: 0 40% 0 0;\n    }\n}"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/index.scss"],"names":[],"mappings":"AAAA;EACI,kBAAkB,EAAA;;AAGtB;EACI,kBAAkB;EAClB,2BAA2B;EAE3B,aAAa;EACb,8BAA8B,EAAA;;AAGlC;EACI,yBAAoC,EAAA;;AAGxC;EACI,kBAAkB;EAClB,YAAY;EACZ,WAAW;EACX,eAAe,EAAA;;AAGnB;EACI,mDAA2C;EAC3C,sBAAsB;EACtB,eAAe;EACf,aAAa;EACb,SAAS;EACT,WAAW;EACX,YAAY;EACZ,eAAe;EACf,eAAe,EAAA;;AAGnB;EACI,WAAW;EACX,eAAe,EAAA;;AAInB;EACI,aAAa;EACb,sBAAsB;EAEtB,eAAe;EACf,gBAAgB;EAChB,iBAAiB;EACjB,yBAAoC,EAAA;EAPxC;IAUQ,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,aAAa;IACb,yBAAkC,EAAA;IAd1C;MAiBY,WAAW;MACX,eAAe;MACf,uBAAuB;MACvB,oBAAoB,EAAA;IApBhC;MAwBY,iBAAiB;MACjB,gBAAgB,EAAA;EAzB5B;IA8BQ,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,kBAAkB,EAAA;IAjC1B;MAoCY,aAAa;MACb,mBAAmB;MACnB,UAAU;MACV,eAAe,EAAA;EAvC3B;IA4CQ,aAAa,EAAA;IA5CrB;MA+CY,iBAAiB;MACjB,WAAW,EAAA;;AAKvB;EACI,cAAc;EACd,iBAAiB;EACjB,gBAAgB;EAChB,YAAY,EAAA;;AAGhB;EACI;IACI,8BAA8B,EAAA;EAGlC;IACI,YAAY;IACZ,WAAW,EAAA,EACd;;AAGL;EAEI;IACI,0BAA0B,EAAA;EAG9B;IACI,eAAe;IACf,gBAAgB;IAChB,4BAA4B;IAC5B,mBAAmB,EAAA;EAGvB;IACI,yBAAyB,EAAA;EAG7B;IACI,eAAe,EAAA;EAGnB;IACI,cAAc,EAAA,EACjB;;AAGL;EACI;IACI,gBAAgB,EAAA,EACnB","sourcesContent":["body {\n    min-height: 100dvh;\n}\n\n.wrapper {\n    position: relative;\n    background-color: aliceblue;\n\n    display: grid;\n    grid-template-columns: 1fr 3fr;\n}\n\n.main {\n    background-color: rgb(253, 253, 253);\n}\n\n.add-new {\n    position: absolute;\n    bottom: 1rem;\n    right: 1rem;\n    cursor: pointer;\n}\n\n.burger {\n    background: url(../imgs/icons8-menu-50.png);\n    background-size: cover;\n    position: fixed;\n    display: none;\n    top: 1rem;\n    right: 1rem;\n    height: 30px;\n    aspect-ratio: 1;\n    cursor: pointer;\n}\n\nsvg {\n    width: 35px;\n    aspect-ratio: 1;\n}\n\n\n.side-bar {\n    display: flex;\n    flex-direction: column;\n\n    font-size: 1rem;\n    font-weight: 600;\n    min-height: 100vh;\n    background-color: rgb(235, 235, 235);\n\n    .profile {\n        display: flex;\n        align-items: center;\n        gap: 1rem;\n        padding: 1rem;\n        background-color: rgb(0, 255, 170);\n\n        .profile-picture{\n            width: 50px;\n            aspect-ratio: 1;\n            background-color: beige;\n            border-radius: 100vh;\n        }\n\n        .profile-name{\n            font-size: 1.3rem;\n            font-weight: 600;\n        }\n    }\n\n    ul {\n        display: flex;\n        flex-direction: column;\n        gap: 1rem;\n        padding: 1rem 1rem;\n\n        li {\n            display: flex;\n            align-items: center;\n            gap: .5rem;\n            cursor: pointer;\n        }\n    }\n\n    .projects {\n        padding: 1rem;\n\n        p {\n            font-size: 1.2rem;\n            opacity: .5;\n        }\n    }\n}\n\n.inbox-header {\n    padding: .5rem;\n    font-size: 1.2rem;\n    font-weight: 600;\n    color: green;\n}\n\n@media screen and (min-width: 1200px){\n    .wrapper {\n        grid-template-columns: 1fr 5fr;\n    }\n\n    .add-new{\n        bottom: 2rem;\n        right: 2rem;\n    }\n}\n\n@media screen and (max-width: 1000px){\n\n    .wrapper {\n        grid-template-columns: 1fr;\n    }\n\n    .side-bar {\n        position: fixed;\n        inset: 0 60% 0 0;\n        transform: translateX(-100%);\n        transition: all .5s;\n    }\n\n    .side-bar.active {\n        transform: translateX(0%);\n    }\n\n    .add-new {\n        position: fixed;\n    }\n\n    .burger{\n        display: unset;\n    }\n}\n\n@media screen and (max-width: 600px){\n    .side-bar{\n        inset: 0 40% 0 0;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2153,4 +2163,4 @@ document.querySelector('.burger').addEventListener('click', () => {
 
 /******/ })()
 ;
-//# sourceMappingURL=main9ba201753629ff4e32af.bundle.js.map
+//# sourceMappingURL=main94fa2a0b541775112bb7.bundle.js.map
