@@ -31,14 +31,14 @@ function createTaskUi(todoArray, main) {
             <p class="date">${element.dueDate.toLocaleDateString('en-US', options)}</p>
             <p class="priority">${element.priority}</p>
             <div class="open-close" style="position: relative">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ssvg" height="30px" viewBox="0 0 24 24"><title>arrow-down-drop-circle-outline</title><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ssvg" height="25" width="25" viewBox="0 0 24 24"><title>email-open</title><path d="M21,9V18C21,19.66 19.66,21 18,21H5C3.34,21 2,19.66 2,18V9C2,7.89 2.6,6.92 3.5,6.4V6.4L11.5,1.78L19.5,6.4V6.4C20.4,6.92 21,7.89 21,9M3.72,7.47L11.5,12.5L19.28,7.47L11.5,2.93L3.72,7.47M11.5,13.71L3.13,8.28C3.05,8.5 3,8.75 3,9V18C3,19.1 3.9,20 5,20H18C19.1,20 20,19.1 20,18V9C20,8.75 19.95,8.5 19.87,8.28L11.5,13.71Z" /></svg>
                 <div class="ssvg" style="position: absolute; height: 100%; width: 100%;"></div>
             </div>
         </div>
         <div class="hidden">
-            <button class="delete-task">del</button>
+            <button class="delete-task">Delete</button>
             <div class="check-lists"></div>
-            <div class="note">${element.note}</div>
+            <div class="note">Note: ${element.note}</div>
         </div>
         `;
 
@@ -49,7 +49,7 @@ function createTaskUi(todoArray, main) {
             bar.classList.add('list');
             bar.innerHTML = `
             <div>${el}</div>
-            <del index="${i}" class="remove-box">x</del>
+            <input type="checkbox">
             `;
             taskDiv.querySelector('.check-lists').appendChild(bar);
         });
@@ -68,7 +68,7 @@ function createTaskUi(todoArray, main) {
             }
         }
 
-        if (event.target.tagName === 'DEL') {
+        if (event.target.tagName === 'INPUT') {
             // Find the index of the clicked element in the DOM
             let taskDiv = event.target.closest('.task');
             if (taskDiv) {

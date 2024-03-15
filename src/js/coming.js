@@ -7,6 +7,11 @@ function createComingUi(todoArray, main) {
     let inboxLayout = document.createElement('div');
     inboxLayout.classList.add('inbox-layout');
 
+    let comingHeader = document.createElement('div');
+    comingHeader.classList.add('inbox-header');
+    comingHeader.innerHTML = `<p>COMING</p>`;
+    inboxLayout.appendChild(comingHeader);
+
     let today = new Date();
 
     let todayArray;

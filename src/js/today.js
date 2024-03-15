@@ -7,6 +7,11 @@ function createTodayUi(todoArray, main) {
     let inboxLayout = document.createElement('div');
     inboxLayout.classList.add('inbox-layout');
 
+    let todayHeader = document.createElement('div');
+    todayHeader.classList.add('inbox-header');
+    todayHeader.innerHTML = `<p>TODAY</p>`;
+    inboxLayout.appendChild(todayHeader);
+
     let today = new Date();
 
     let todayArray;

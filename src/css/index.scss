@@ -31,6 +31,7 @@ body {
     height: 30px;
     aspect-ratio: 1;
     cursor: pointer;
+    z-index: 1;
 }
 
 svg {
@@ -42,6 +43,10 @@ svg {
 .side-bar {
     display: flex;
     flex-direction: column;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    height: 100dvh;
 
     font-size: 1rem;
     font-weight: 600;
@@ -97,6 +102,11 @@ svg {
     font-size: 1.2rem;
     font-weight: 600;
     color: green;
+    padding: 1.5rem;
+    padding-inline: 1rem;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(1rem);
 }
 
 @media screen and (min-width: 1200px){
@@ -140,4 +150,8 @@ svg {
     .side-bar{
         inset: 0 40% 0 0;
     }
+}
+
+input[type='checkbox'] {
+    accent-color: rgb(58, 224, 86);
 }

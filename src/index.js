@@ -33,7 +33,9 @@ let primaryNav = document.querySelector('.primary-nav');
 
 addBtn.addEventListener('click', () => {
     wrapper.appendChild(box);
-    document.querySelector('.box-menu').appendChild(todoCreationForm);
+    if (!document.querySelector('.box-menu').firstElementChild){
+        document.querySelector('.box-menu').appendChild(todoCreationForm);
+    }
     document.querySelector('.close-box').addEventListener('click', () => {
         if (box.parentElement === wrapper) {
             wrapper.removeChild(box);
@@ -163,4 +165,10 @@ function navStyle() {
 
 document.querySelector('.burger').addEventListener('click', () => {
     document.querySelector('.side-bar').classList.toggle('active');
+})
+
+window.addEventListener('click', (e) => {
+    if (e.target !== document.querySelector('.side-bar') && e.target !== document.querySelector('.burger')){
+        document.querySelector('.side-bar').classList.remove('active');
+    }
 })

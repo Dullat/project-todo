@@ -1,6 +1,7 @@
 .box {
     position: absolute;
     inset: 50% 0 0 0;
+    z-index: 3;
 
     display: grid;
     width: auto;
