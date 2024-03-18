@@ -48,43 +48,41 @@ function createTaskUi(todoArray, main) {
             let bar = document.createElement('div');
             bar.classList.add('list');
             bar.innerHTML = `
-            <div>${el}</div>
+            <div>${el.value}</div>
             <input type="checkbox">
             `;
+
+            let checkbox = bar.querySelector('input[type="checkbox"]');
+            if (el.checked) {
+                checkbox.checked = true;
+            }
+
             taskDiv.querySelector('.check-lists').appendChild(bar);
+
+            checkbox.addEventListener('click', () => {
+                if (checkbox.checked) {
+                    el.checked = true;
+                } else if (!checkbox.checked) el.checked = false;
+            });
+        });
+
+        taskDiv.querySelector('.delete-task').addEventListener('click', () => {
+            todoArray.forEach((array, indexofarray) => {
+                if (array.index === element.index){
+                    todoArray.splice(indexofarray, 1);
+                }
+            });
+            createTaskUi(todoArray, main);
+            console.log(todoArray);
         });
     });
 
     main.appendChild(inboxLayout);
 
-    // Event delegation for button clicks
     inboxLayout.addEventListener("click", (event) => {
-        if (event.target.tagName === 'BUTTON') {
-            // Find the index of the clicked element in the DOM
-            let index = Array.from(inboxLayout.querySelectorAll('.task')).indexOf(event.target.closest('.task'));
-            if (index !== -1) {
-                todoArray.splice(index, 1);
-                createTaskUi(todoArray, main);
-            }
-        }
-
-        if (event.target.tagName === 'INPUT') {
-            // Find the index of the clicked element in the DOM
-            let taskDiv = event.target.closest('.task');
-            if (taskDiv) {
-                let index = Array.from(taskDiv.parentNode.children).indexOf(taskDiv);
-                let taskIndex = Array.from(taskDiv.querySelectorAll('del')).indexOf(event.target);
-                if (index !== -1 && taskIndex !== -1) {
-                    todoArray[index].checkList.splice(taskIndex, 1);
-                    createTaskUi(todoArray, main);
-                }
-            }
-        }
-
-
-        if (event.target.classList.contains('ssvg')) {
+         if (event.target.classList.contains('ssvg')) {
             event.target.closest('.task').querySelector('.hidden').classList.toggle('active');
-        }        
+        }
     });
 }
 

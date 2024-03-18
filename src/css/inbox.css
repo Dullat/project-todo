@@ -1,0 +1,78 @@
+.inbox-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.task {
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.322);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.2rem;
+}
+.task .top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.3fr;
+  align-items: center;
+  padding: 0.5rem;
+  padding-inline: 1rem;
+  color: rgb(58, 52, 52);
+}
+.task .top .title {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.task .top .date {
+  opacity: 0.7;
+}
+.task .top .priority {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 600;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+.task .top .open-close {
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+}
+.task .hidden {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.task .hidden .delete-task {
+  padding: 0.5rem;
+  font-weight: 600;
+}
+.task .hidden .check-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.task .hidden .check-lists .list {
+  display: flex;
+  align-items: center;
+  background-color: rgb(222, 222, 223);
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+}
+.task .hidden .check-lists .list div {
+  flex-grow: 1;
+}
+.task .hidden .note {
+  border-radius: 0.2rem;
+  background-color: rgb(155, 243, 214);
+  min-height: 4rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.hidden.active {
+  display: flex;
+}/*# sourceMappingURL=inbox.css.map */

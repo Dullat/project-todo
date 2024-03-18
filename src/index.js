@@ -72,7 +72,7 @@ todoCreationForm.addEventListener('submit', (e) => {
     let sendChecklist = [];
 
     checkListArray.forEach(e => {
-        sendChecklist.push(e.value);
+        sendChecklist.push({value: e.value, checked: false});
     })
 
     console.log(sendChecklist);

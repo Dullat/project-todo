@@ -1,0 +1,8 @@
+if (event.target.tagName === 'BUTTON') {
+                    // Find the index of the clicked element in the DOM
+                    let index = Array.from(inboxLayout.querySelectorAll('.task')).indexOf(event.target.closest('.task'));
+                    if (index !== -1) {
+                        todoArray.splice(index, 1);
+                        createTaskUi(todoArray, main);
+                    }
+                }
