@@ -8,11 +8,12 @@ box.innerHTML = `
     </svg>
 </div>
 <ul class="box-header">
-    <li class="todo-creation">ToDo</li>
-    <li class="project-creation">Project</li>
-    <li class="note-creation">Note</li>
+    <li class="todo-creation" style="cursor:pointer; padding: .5rem 1rem">ToDo</li>
+    <li class="note-creation" style="cursor:pointer; padding: .5rem 1rem">Note</li>
 </ul>
 <div class="box-menu"></div>
 `;
 
 module.exports = { box };
+
+// <li class="project-creation">Project</li> add it later

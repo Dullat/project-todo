@@ -9,7 +9,7 @@ function createComingUi(todoArray, main) {
 
     let todayHeader = document.createElement('div');
     todayHeader.classList.add('inbox-header');
-    todayHeader.innerHTML = `<p>TODAY</p>`;
+    todayHeader.innerHTML = `<p>UP-COMING</p>`;
     inboxLayout.appendChild(todayHeader);
 
     let today = new Date();

@@ -16,6 +16,9 @@ body {
 
 .add-new {
     position: absolute;
+    background-color: green;
+    border-radius: 100vh;
+    height: fit-content;
     bottom: 1rem;
     right: 1rem;
     cursor: pointer;

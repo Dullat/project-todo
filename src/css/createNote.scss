@@ -25,5 +25,13 @@
 
         border-radius: .7rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+
+        .note{
+            border-radius: .2rem;
+            background-color: rgb(155, 243, 214);
+            min-height: 4rem;
+            padding: .5rem;
+            font-size: .9rem;
+        }
     }
 }

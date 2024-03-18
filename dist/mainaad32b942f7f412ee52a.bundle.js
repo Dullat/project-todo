@@ -36,18 +36,23 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.box {
     height: 4rem;
     font-weight: 600;
     font-size: 1.2rem;
-    background: white; }
+    background: #c4c4c4; }
   .box .box[active] {
     background-color: aquamarine; }
+  .box .box-menu {
+    background-color: #dbdbdb;
+    overflow-y: auto; }
 
 .close-box {
   position: absolute;
-  top: 1rem; }
+  top: .7rem;
+  left: .5rem;
+  cursor: pointer; }
 
 @media screen and (max-width: 1000px) {
   .box {
     position: fixed; } }
-`, "",{"version":3,"sources":["webpack://./src/css/createBox.scss"],"names":[],"mappings":"AAAA;EACI,kBAAkB;EAClB,gBAAgB;EAChB,UAAU;EAEV,aAAa;EACb,WAAW;EACX,+BAA+B;EAC/B,2BAA2B,EAAA;EAR/B;IAWQ,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,YAAY;IACZ,gBAAgB;IAChB,iBAAiB;IACjB,iBAAiB,EAAA;EAjBzB;IAqBQ,4BAA4B,EAAA;;AAIpC;EACI,kBAAkB;EAClB,SAAS,EAAA;;AAGb;EACI;IACI,eAAe,EAAA,EAClB","sourcesContent":[".box {\r\n    position: absolute;\r\n    inset: 50% 0 0 0;\r\n    z-index: 3;\r\n\r\n    display: grid;\r\n    width: auto;\r\n    grid-template-rows: min-content;\r\n    background-color: aliceblue;\r\n\r\n    .box-header{\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: space-around;\r\n        height: 4rem;\r\n        font-weight: 600;\r\n        font-size: 1.2rem;\r\n        background: white;\r\n    }\r\n\r\n    .box[active]{\r\n        background-color: aquamarine;\r\n    }\r\n}\r\n\r\n.close-box {\r\n    position: absolute;\r\n    top: 1rem;\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n    .box {\r\n        position: fixed;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/createBox.scss"],"names":[],"mappings":"AAAA;EACI,kBAAkB;EAClB,gBAAgB;EAChB,UAAU;EAEV,aAAa;EACb,WAAW;EACX,+BAA+B;EAC/B,2BAA2B,EAAA;EAR/B;IAWQ,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,YAAY;IACZ,gBAAgB;IAChB,iBAAiB;IACjB,mBAA8B,EAAA;EAjBtC;IAqBQ,4BAA4B,EAAA;EArBpC;IAyBQ,yBAAoC;IACpC,gBAAgB,EAAA;;AAIxB;EACI,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,eAAe,EAAA;;AAGnB;EACI;IACI,eAAe,EAAA,EAClB","sourcesContent":[".box {\r\n    position: absolute;\r\n    inset: 50% 0 0 0;\r\n    z-index: 3;\r\n\r\n    display: grid;\r\n    width: auto;\r\n    grid-template-rows: min-content;\r\n    background-color: aliceblue;\r\n\r\n    .box-header{\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: space-around;\r\n        height: 4rem;\r\n        font-weight: 600;\r\n        font-size: 1.2rem;\r\n        background: rgb(196, 196, 196);\r\n    }\r\n\r\n    .box[active]{\r\n        background-color: aquamarine;\r\n    }\r\n\r\n    .box-menu {\r\n        background-color: rgb(219, 219, 219);\r\n        overflow-y: auto;\r\n    }\r\n}\r\n\r\n.close-box {\r\n    position: absolute;\r\n    top: .7rem;\r\n    left: .5rem;\r\n    cursor: pointer;\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n    .box {\r\n        position: fixed;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -96,7 +101,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.create-note {
     padding: 1rem;
     border-radius: .7rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.26); }
-`, "",{"version":3,"sources":["webpack://./src/css/createNote.scss"],"names":[],"mappings":"AAAA;EACI,aAAa;EACb,sBAAsB;EACtB,SAAS;EACT,aAAa;EACb,YAAY,EAAA;EALhB;IAQQ,gBAAgB,EAAA;;AAIxB;EACI,aAAa;EACb,2DAA2D;EAC3D,SAAS;EACT,aAAa;EACb,iBAAiB,EAAA;EALrB;IAQQ,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,aAAa;IAEb,oBAAoB;IACpB,wCAAwC,EAAA","sourcesContent":[".create-note {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    padding: 1rem;\r\n    height: 100%;\r\n\r\n    button{\r\n        margin-top: auto;\r\n    }\r\n}\r\n\r\n.note-body {\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\r\n    gap: 1rem;\r\n    padding: 1rem;\r\n    padding-top: 0rem;\r\n\r\n    .note-card{\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        padding: 1rem;\r\n\r\n        border-radius: .7rem;\r\n        box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);\r\n    }\r\n}"],"sourceRoot":""}]);
+    .note-body .note-card .note {
+      border-radius: .2rem;
+      background-color: #9bf3d6;
+      min-height: 4rem;
+      padding: .5rem;
+      font-size: .9rem; }
+`, "",{"version":3,"sources":["webpack://./src/css/createNote.scss"],"names":[],"mappings":"AAAA;EACI,aAAa;EACb,sBAAsB;EACtB,SAAS;EACT,aAAa;EACb,YAAY,EAAA;EALhB;IAQQ,gBAAgB,EAAA;;AAIxB;EACI,aAAa;EACb,2DAA2D;EAC3D,SAAS;EACT,aAAa;EACb,iBAAiB,EAAA;EALrB;IAQQ,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,aAAa;IAEb,oBAAoB;IACpB,wCAAwC,EAAA;IAdhD;MAiBY,oBAAoB;MACpB,yBAAoC;MACpC,gBAAgB;MAChB,cAAc;MACd,gBAAgB,EAAA","sourcesContent":[".create-note {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    padding: 1rem;\r\n    height: 100%;\r\n\r\n    button{\r\n        margin-top: auto;\r\n    }\r\n}\r\n\r\n.note-body {\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\r\n    gap: 1rem;\r\n    padding: 1rem;\r\n    padding-top: 0rem;\r\n\r\n    .note-card{\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        padding: 1rem;\r\n\r\n        border-radius: .7rem;\r\n        box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);\r\n\r\n        .note{\r\n            border-radius: .2rem;\r\n            background-color: rgb(155, 243, 214);\r\n            min-height: 4rem;\r\n            padding: .5rem;\r\n            font-size: .9rem;\r\n        }\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -129,7 +140,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.todoCreationForm {
   gap: .7rem;
   height: 100%;
   padding: 1rem;
-  background-color: bisque; }
+  background-color: #dadada; }
+  .todoCreationForm textarea {
+    min-height: 2rem; }
   .todoCreationForm .checklists-container {
     display: flex;
     flex-direction: column;
@@ -140,13 +153,29 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.todoCreationForm {
       gap: 1rem; }
       .todoCreationForm .checklists-container .check-list-box .checkList {
         flex-grow: 1; }
+  .todoCreationForm .priority {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    gap: .2rem; }
+    .todoCreationForm .priority .prio {
+      border-radius: .5rem;
+      padding: .2rem .5rem;
+      cursor: pointer;
+      background-color: beige; }
   .todoCreationForm .bottom {
     margin-top: auto;
     display: flex;
+    gap: 1rem;
     align-items: center; }
     .todoCreationForm .bottom button {
       margin-left: auto; }
-`, "",{"version":3,"sources":["webpack://./src/css/createTodo.scss"],"names":[],"mappings":"AAAA;EACI,aAAa;EACb,sBAAsB;EACtB,UAAU;EACV,YAAY;EACZ,aAAa;EACb,wBAAwB,EAAA;EAN5B;IASQ,aAAa;IACb,sBAAsB;IACtB,UAAU,EAAA;IAXlB;MAcY,WAAW;MAEX,aAAa;MACb,SAAS,EAAA;MAjBrB;QAoBgB,YAAY,EAAA;EApB5B;IA0BQ,gBAAgB;IAEhB,aAAa;IACb,mBAAmB,EAAA;IA7B3B;MAgCY,iBAAiB,EAAA","sourcesContent":[".todoCreationForm {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: .7rem;\r\n    height: 100%;\r\n    padding: 1rem;\r\n    background-color: bisque;\r\n\r\n    .checklists-container {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: .5rem;\r\n\r\n        .check-list-box {\r\n            width: 100%;\r\n\r\n            display: flex;\r\n            gap: 1rem;\r\n\r\n            .checkList {\r\n                flex-grow: 1;\r\n            }\r\n        }\r\n    }\r\n\r\n    .bottom{\r\n        margin-top: auto;\r\n\r\n        display: flex;\r\n        align-items: center;\r\n\r\n        button {\r\n            margin-left: auto;\r\n        }\r\n    }\r\n}"],"sourceRoot":""}]);
+    .todoCreationForm .bottom .create-check-list {
+      background-color: green;
+      border-radius: .5rem;
+      padding: .4rem;
+      cursor: pointer; }
+`, "",{"version":3,"sources":["webpack://./src/css/createTodo.scss"],"names":[],"mappings":"AAAA;EACI,aAAa;EACb,sBAAsB;EACtB,UAAU;EACV,YAAY;EACZ,aAAa;EACb,yBAAoC,EAAA;EANxC;IASQ,gBAAgB,EAAA;EATxB;IAaQ,aAAa;IACb,sBAAsB;IACtB,UAAU,EAAA;IAflB;MAkBY,WAAW;MAEX,aAAa;MACb,SAAS,EAAA;MArBrB;QAwBgB,YAAY,EAAA;EAxB5B;IA8BQ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,UAAU,EAAA;IAjClB;MAoCY,oBAAoB;MACpB,oBAAoB;MACpB,eAAe;MACf,uBAAuB,EAAA;EAvCnC;IA4CQ,gBAAgB;IAEhB,aAAa;IACb,SAAS;IACT,mBAAmB,EAAA;IAhD3B;MAmDY,iBAAiB,EAAA;IAnD7B;MAuDY,uBAAuB;MACvB,oBAAoB;MACpB,cAAc;MACd,eAAe,EAAA","sourcesContent":[".todoCreationForm {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: .7rem;\r\n    height: 100%;\r\n    padding: 1rem;\r\n    background-color: rgb(218, 218, 218);\r\n\r\n    textarea{\r\n        min-height: 2rem;\r\n    }\r\n\r\n    .checklists-container {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: .5rem;\r\n\r\n        .check-list-box {\r\n            width: 100%;\r\n\r\n            display: flex;\r\n            gap: 1rem;\r\n\r\n            .checkList {\r\n                flex-grow: 1;\r\n            }\r\n        }\r\n    }\r\n\r\n    .priority {\r\n        display: flex;\r\n        flex-direction: column;\r\n        padding: .5rem;\r\n        gap: .2rem;\r\n\r\n        .prio{\r\n            border-radius: .5rem;\r\n            padding: .2rem .5rem;\r\n            cursor: pointer;\r\n            background-color: beige;\r\n        }\r\n    }\r\n\r\n    .bottom{\r\n        margin-top: auto;\r\n\r\n        display: flex;\r\n        gap: 1rem;\r\n        align-items: center;\r\n\r\n        button {\r\n            margin-left: auto;\r\n        }\r\n\r\n        .create-check-list{\r\n            background-color: green;\r\n            border-radius: .5rem;\r\n            padding: .4rem;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -282,6 +311,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 
 .add-new {
   position: absolute;
+  background-color: green;
+  border-radius: 100vh;
+  height: fit-content;
   bottom: 1rem;
   right: 1rem;
   cursor: pointer; }
@@ -382,7 +414,7 @@ svg {
 
 input[type='checkbox'] {
   accent-color: #3ae056; }
-`, "",{"version":3,"sources":["webpack://./src/css/index.scss"],"names":[],"mappings":"AAAA;EACI,kBAAkB,EAAA;;AAGtB;EACI,kBAAkB;EAClB,2BAA2B;EAE3B,aAAa;EACb,8BAA8B,EAAA;;AAGlC;EACI,yBAAoC,EAAA;;AAGxC;EACI,kBAAkB;EAClB,YAAY;EACZ,WAAW;EACX,eAAe,EAAA;;AAGnB;EACI,mDAA2C;EAC3C,sBAAsB;EACtB,eAAe;EACf,aAAa;EACb,SAAS;EACT,WAAW;EACX,YAAY;EACZ,eAAe;EACf,eAAe;EACf,UAAU,EAAA;;AAGd;EACI,WAAW;EACX,eAAe,EAAA;;AAInB;EACI,aAAa;EACb,sBAAsB;EACtB,UAAU;EACV,gBAAgB;EAChB,MAAM;EACN,cAAc;EAEd,eAAe;EACf,gBAAgB;EAChB,iBAAiB;EACjB,yBAAoC,EAAA;EAXxC;IAcQ,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,aAAa;IACb,yBAAkC,EAAA;IAlB1C;MAqBY,WAAW;MACX,eAAe;MACf,uBAAuB;MACvB,oBAAoB,EAAA;IAxBhC;MA4BY,iBAAiB;MACjB,gBAAgB,EAAA;EA7B5B;IAkCQ,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,kBAAkB,EAAA;IArC1B;MAwCY,aAAa;MACb,mBAAmB;MACnB,UAAU;MACV,eAAe,EAAA;EA3C3B;IAgDQ,aAAa,EAAA;IAhDrB;MAmDY,iBAAiB;MACjB,WAAW,EAAA;;AAKvB;EACI,cAAc;EACd,iBAAiB;EACjB,gBAAgB;EAChB,YAAY;EACZ,eAAe;EACf,oBAAoB;EACpB,gBAAgB;EAChB,MAAM;EACN,2BAA2B,EAAA;;AAG/B;EACI;IACI,8BAA8B,EAAA;EAGlC;IACI,YAAY;IACZ,WAAW,EAAA,EACd;;AAGL;EAEI;IACI,0BAA0B,EAAA;EAG9B;IACI,eAAe;IACf,gBAAgB;IAChB,4BAA4B;IAC5B,mBAAmB,EAAA;EAGvB;IACI,yBAAyB,EAAA;EAG7B;IACI,eAAe,EAAA;EAGnB;IACI,cAAc,EAAA,EACjB;;AAGL;EACI;IACI,gBAAgB,EAAA,EACnB;;AAGL;EACI,qBAA8B,EAAA","sourcesContent":["body {\r\n    min-height: 100dvh;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    background-color: aliceblue;\r\n\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n}\r\n\r\n.main {\r\n    background-color: rgb(253, 253, 253);\r\n}\r\n\r\n.add-new {\r\n    position: absolute;\r\n    bottom: 1rem;\r\n    right: 1rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.burger {\r\n    background: url(../imgs/icons8-menu-50.png);\r\n    background-size: cover;\r\n    position: fixed;\r\n    display: none;\r\n    top: 1rem;\r\n    right: 1rem;\r\n    height: 30px;\r\n    aspect-ratio: 1;\r\n    cursor: pointer;\r\n    z-index: 1;\r\n}\r\n\r\nsvg {\r\n    width: 35px;\r\n    aspect-ratio: 1;\r\n}\r\n\r\n\r\n.side-bar {\r\n    display: flex;\r\n    flex-direction: column;\r\n    z-index: 2;\r\n    position: sticky;\r\n    top: 0;\r\n    height: 100dvh;\r\n\r\n    font-size: 1rem;\r\n    font-weight: 600;\r\n    min-height: 100vh;\r\n    background-color: rgb(235, 235, 235);\r\n\r\n    .profile {\r\n        display: flex;\r\n        align-items: center;\r\n        gap: 1rem;\r\n        padding: 1rem;\r\n        background-color: rgb(0, 255, 170);\r\n\r\n        .profile-picture{\r\n            width: 50px;\r\n            aspect-ratio: 1;\r\n            background-color: beige;\r\n            border-radius: 100vh;\r\n        }\r\n\r\n        .profile-name{\r\n            font-size: 1.3rem;\r\n            font-weight: 600;\r\n        }\r\n    }\r\n\r\n    ul {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        padding: 1rem 1rem;\r\n\r\n        li {\r\n            display: flex;\r\n            align-items: center;\r\n            gap: .5rem;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n\r\n    .projects {\r\n        padding: 1rem;\r\n\r\n        p {\r\n            font-size: 1.2rem;\r\n            opacity: .5;\r\n        }\r\n    }\r\n}\r\n\r\n.inbox-header {\r\n    padding: .5rem;\r\n    font-size: 1.2rem;\r\n    font-weight: 600;\r\n    color: green;\r\n    padding: 1.5rem;\r\n    padding-inline: 1rem;\r\n    position: sticky;\r\n    top: 0;\r\n    backdrop-filter: blur(1rem);\r\n}\r\n\r\n@media screen and (min-width: 1200px){\r\n    .wrapper {\r\n        grid-template-columns: 1fr 5fr;\r\n    }\r\n\r\n    .add-new{\r\n        bottom: 2rem;\r\n        right: 2rem;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 1000px){\r\n\r\n    .wrapper {\r\n        grid-template-columns: 1fr;\r\n    }\r\n\r\n    .side-bar {\r\n        position: fixed;\r\n        inset: 0 60% 0 0;\r\n        transform: translateX(-100%);\r\n        transition: all .5s;\r\n    }\r\n\r\n    .side-bar.active {\r\n        transform: translateX(0%);\r\n    }\r\n\r\n    .add-new {\r\n        position: fixed;\r\n    }\r\n\r\n    .burger{\r\n        display: unset;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 600px){\r\n    .side-bar{\r\n        inset: 0 40% 0 0;\r\n    }\r\n}\r\n\r\ninput[type='checkbox'] {\r\n    accent-color: rgb(58, 224, 86);\r\n}"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/index.scss"],"names":[],"mappings":"AAAA;EACI,kBAAkB,EAAA;;AAGtB;EACI,kBAAkB;EAClB,2BAA2B;EAE3B,aAAa;EACb,8BAA8B,EAAA;;AAGlC;EACI,yBAAoC,EAAA;;AAGxC;EACI,kBAAkB;EAClB,uBAAuB;EACvB,oBAAoB;EACpB,mBAAmB;EACnB,YAAY;EACZ,WAAW;EACX,eAAe,EAAA;;AAGnB;EACI,mDAA2C;EAC3C,sBAAsB;EACtB,eAAe;EACf,aAAa;EACb,SAAS;EACT,WAAW;EACX,YAAY;EACZ,eAAe;EACf,eAAe;EACf,UAAU,EAAA;;AAGd;EACI,WAAW;EACX,eAAe,EAAA;;AAInB;EACI,aAAa;EACb,sBAAsB;EACtB,UAAU;EACV,gBAAgB;EAChB,MAAM;EACN,cAAc;EAEd,eAAe;EACf,gBAAgB;EAChB,iBAAiB;EACjB,yBAAoC,EAAA;EAXxC;IAcQ,aAAa;IACb,mBAAmB;IACnB,SAAS;IACT,aAAa;IACb,yBAAkC,EAAA;IAlB1C;MAqBY,WAAW;MACX,eAAe;MACf,uBAAuB;MACvB,oBAAoB,EAAA;IAxBhC;MA4BY,iBAAiB;MACjB,gBAAgB,EAAA;EA7B5B;IAkCQ,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,kBAAkB,EAAA;IArC1B;MAwCY,aAAa;MACb,mBAAmB;MACnB,UAAU;MACV,eAAe,EAAA;EA3C3B;IAgDQ,aAAa,EAAA;IAhDrB;MAmDY,iBAAiB;MACjB,WAAW,EAAA;;AAKvB;EACI,cAAc;EACd,iBAAiB;EACjB,gBAAgB;EAChB,YAAY;EACZ,eAAe;EACf,oBAAoB;EACpB,gBAAgB;EAChB,MAAM;EACN,2BAA2B,EAAA;;AAG/B;EACI;IACI,8BAA8B,EAAA;EAGlC;IACI,YAAY;IACZ,WAAW,EAAA,EACd;;AAGL;EAEI;IACI,0BAA0B,EAAA;EAG9B;IACI,eAAe;IACf,gBAAgB;IAChB,4BAA4B;IAC5B,mBAAmB,EAAA;EAGvB;IACI,yBAAyB,EAAA;EAG7B;IACI,eAAe,EAAA;EAGnB;IACI,cAAc,EAAA,EACjB;;AAGL;EACI;IACI,gBAAgB,EAAA,EACnB;;AAGL;EACI,qBAA8B,EAAA","sourcesContent":["body {\r\n    min-height: 100dvh;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    background-color: aliceblue;\r\n\r\n    display: grid;\r\n    grid-template-columns: 1fr 3fr;\r\n}\r\n\r\n.main {\r\n    background-color: rgb(253, 253, 253);\r\n}\r\n\r\n.add-new {\r\n    position: absolute;\r\n    background-color: green;\r\n    border-radius: 100vh;\r\n    height: fit-content;\r\n    bottom: 1rem;\r\n    right: 1rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.burger {\r\n    background: url(../imgs/icons8-menu-50.png);\r\n    background-size: cover;\r\n    position: fixed;\r\n    display: none;\r\n    top: 1rem;\r\n    right: 1rem;\r\n    height: 30px;\r\n    aspect-ratio: 1;\r\n    cursor: pointer;\r\n    z-index: 1;\r\n}\r\n\r\nsvg {\r\n    width: 35px;\r\n    aspect-ratio: 1;\r\n}\r\n\r\n\r\n.side-bar {\r\n    display: flex;\r\n    flex-direction: column;\r\n    z-index: 2;\r\n    position: sticky;\r\n    top: 0;\r\n    height: 100dvh;\r\n\r\n    font-size: 1rem;\r\n    font-weight: 600;\r\n    min-height: 100vh;\r\n    background-color: rgb(235, 235, 235);\r\n\r\n    .profile {\r\n        display: flex;\r\n        align-items: center;\r\n        gap: 1rem;\r\n        padding: 1rem;\r\n        background-color: rgb(0, 255, 170);\r\n\r\n        .profile-picture{\r\n            width: 50px;\r\n            aspect-ratio: 1;\r\n            background-color: beige;\r\n            border-radius: 100vh;\r\n        }\r\n\r\n        .profile-name{\r\n            font-size: 1.3rem;\r\n            font-weight: 600;\r\n        }\r\n    }\r\n\r\n    ul {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n        padding: 1rem 1rem;\r\n\r\n        li {\r\n            display: flex;\r\n            align-items: center;\r\n            gap: .5rem;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n\r\n    .projects {\r\n        padding: 1rem;\r\n\r\n        p {\r\n            font-size: 1.2rem;\r\n            opacity: .5;\r\n        }\r\n    }\r\n}\r\n\r\n.inbox-header {\r\n    padding: .5rem;\r\n    font-size: 1.2rem;\r\n    font-weight: 600;\r\n    color: green;\r\n    padding: 1.5rem;\r\n    padding-inline: 1rem;\r\n    position: sticky;\r\n    top: 0;\r\n    backdrop-filter: blur(1rem);\r\n}\r\n\r\n@media screen and (min-width: 1200px){\r\n    .wrapper {\r\n        grid-template-columns: 1fr 5fr;\r\n    }\r\n\r\n    .add-new{\r\n        bottom: 2rem;\r\n        right: 2rem;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 1000px){\r\n\r\n    .wrapper {\r\n        grid-template-columns: 1fr;\r\n    }\r\n\r\n    .side-bar {\r\n        position: fixed;\r\n        inset: 0 60% 0 0;\r\n        transform: translateX(-100%);\r\n        transition: all .5s;\r\n    }\r\n\r\n    .side-bar.active {\r\n        transform: translateX(0%);\r\n    }\r\n\r\n    .add-new {\r\n        position: fixed;\r\n    }\r\n\r\n    .burger{\r\n        display: unset;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 600px){\r\n    .side-bar{\r\n        inset: 0 40% 0 0;\r\n    }\r\n}\r\n\r\ninput[type='checkbox'] {\r\n    accent-color: rgb(58, 224, 86);\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1391,7 +1423,7 @@ function createComingUi(todoArray, main) {
 
     let todayHeader = document.createElement('div');
     todayHeader.classList.add('inbox-header');
-    todayHeader.innerHTML = `<p>TODAY</p>`;
+    todayHeader.innerHTML = `<p>UP-COMING</p>`;
     inboxLayout.appendChild(todayHeader);
 
     let today = new Date();
@@ -1621,7 +1653,7 @@ function createNoteUi(noteArray, main) {
     }
 
     let noteLayout = document.createElement('div');
-    noteLayout.classList.add('note-layout');
+    noteLayout.classList.add('inbox-layout');
 
     let noteHeader = document.createElement('div');
     noteHeader.classList.add('inbox-header');
@@ -1771,14 +1803,15 @@ box.innerHTML = `
     </svg>
 </div>
 <ul class="box-header">
-    <li class="todo-creation">ToDo</li>
-    <li class="project-creation">Project</li>
-    <li class="note-creation">Note</li>
+    <li class="todo-creation" style="cursor:pointer; padding: .5rem 1rem">ToDo</li>
+    <li class="note-creation" style="cursor:pointer; padding: .5rem 1rem">Note</li>
 </ul>
 <div class="box-menu"></div>
 `;
 
 module.exports = { box };
+
+// <li class="project-creation">Project</li> add it later
 
 /***/ }),
 
@@ -1816,14 +1849,14 @@ todoCreationForm.classList.add('todoCreationForm');
 checkList.classList.add('check-list-box');
 
 todoCreationForm.innerHTML = `
-<input type="text" id="title" class="title" placeholder="title: payBills">
-<input type="text" class="description" placeholder="description">
-<textarea></textarea>
+<input type="text" id="title" class="title" placeholder="title: payBills" required>
+<input type="text" class="description" placeholder="description" required>
+<textarea placeholder="note"></textarea>
 <div class="checklists-container"></div>
 <div class="priority">
-    <div class="low prio" data-value="low">Low</div>
-    <div class="med prio" data-value="med">Med</div>
-    <div class="high prio" data-value="high">High</div>
+    <div class="low prio" data-value="low">Priority level: Low</div>
+    <div class="med prio" data-value="med">Priority level: Med</div>
+    <div class="high prio" data-value="high">Priority level: High</div>
 </div>
 
 <div class="bottom">
@@ -1851,10 +1884,10 @@ function checkPrio() {
         e.addEventListener('click', () => {
             prios.forEach(l => {
                 l.removeAttribute('active');
-                l.style.background = 'white';
+                l.style.background = 'beige';
             })
             e.setAttribute('active','')
-            e.style.background = 'red';
+            e.style.background = 'green';
             clicked = e;
         })
     })
@@ -2226,4 +2259,4 @@ window.addEventListener('click', (e) => {
 
 /******/ })()
 ;
-//# sourceMappingURL=maine2598911b6c05132f1a6.bundle.js.map
+//# sourceMappingURL=mainaad32b942f7f412ee52a.bundle.js.map

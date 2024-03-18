@@ -4,7 +4,7 @@ function createNoteUi(noteArray, main) {
     }
 
     let noteLayout = document.createElement('div');
-    noteLayout.classList.add('note-layout');
+    noteLayout.classList.add('inbox-layout');
 
     let noteHeader = document.createElement('div');
     noteHeader.classList.add('inbox-header');

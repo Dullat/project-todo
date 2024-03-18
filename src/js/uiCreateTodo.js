@@ -6,14 +6,14 @@ todoCreationForm.classList.add('todoCreationForm');
 checkList.classList.add('check-list-box');
 
 todoCreationForm.innerHTML = `
-<input type="text" id="title" class="title" placeholder="title: payBills">
-<input type="text" class="description" placeholder="description">
-<textarea></textarea>
+<input type="text" id="title" class="title" placeholder="title: payBills" required>
+<input type="text" class="description" placeholder="description" required>
+<textarea placeholder="note"></textarea>
 <div class="checklists-container"></div>
 <div class="priority">
-    <div class="low prio" data-value="low">Low</div>
-    <div class="med prio" data-value="med">Med</div>
-    <div class="high prio" data-value="high">High</div>
+    <div class="low prio" data-value="low">Priority level: Low</div>
+    <div class="med prio" data-value="med">Priority level: Med</div>
+    <div class="high prio" data-value="high">Priority level: High</div>
 </div>
 
 <div class="bottom">
@@ -41,10 +41,10 @@ function checkPrio() {
         e.addEventListener('click', () => {
             prios.forEach(l => {
                 l.removeAttribute('active');
-                l.style.background = 'white';
+                l.style.background = 'beige';
             })
             e.setAttribute('active','')
-            e.style.background = 'red';
+            e.style.background = 'green';
             clicked = e;
         })
     })

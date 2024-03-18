@@ -23,4 +23,11 @@
   padding: 1rem;
   border-radius: 0.7rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+}
+.note-body .note-card .note {
+  border-radius: 0.2rem;
+  background-color: rgb(155, 243, 214);
+  min-height: 4rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
 }/*# sourceMappingURL=createNote.css.map */

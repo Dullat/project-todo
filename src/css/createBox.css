@@ -14,15 +14,21 @@
   height: 4rem;
   font-weight: 600;
   font-size: 1.2rem;
-  background: white;
+  background: rgb(196, 196, 196);
 }
 .box .box[active] {
   background-color: aquamarine;
 }
+.box .box-menu {
+  background-color: rgb(219, 219, 219);
+  overflow-y: auto;
+}
 
 .close-box {
   position: absolute;
-  top: 1rem;
+  top: 0.7rem;
+  left: 0.5rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {

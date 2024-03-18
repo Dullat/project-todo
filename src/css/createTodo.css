@@ -4,7 +4,10 @@
   gap: 0.7rem;
   height: 100%;
   padding: 1rem;
-  background-color: bisque;
+  background-color: rgb(218, 218, 218);
+}
+.todoCreationForm textarea {
+  min-height: 2rem;
 }
 .todoCreationForm .checklists-container {
   display: flex;
@@ -19,11 +22,30 @@
 .todoCreationForm .checklists-container .check-list-box .checkList {
   flex-grow: 1;
 }
+.todoCreationForm .priority {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.2rem;
+}
+.todoCreationForm .priority .prio {
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  background-color: beige;
+}
 .todoCreationForm .bottom {
   margin-top: auto;
   display: flex;
+  gap: 1rem;
   align-items: center;
 }
 .todoCreationForm .bottom button {
   margin-left: auto;
+}
+.todoCreationForm .bottom .create-check-list {
+  background-color: green;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  cursor: pointer;
 }/*# sourceMappingURL=createTodo.css.map */

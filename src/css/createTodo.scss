@@ -4,7 +4,11 @@
     gap: .7rem;
     height: 100%;
     padding: 1rem;
-    background-color: bisque;
+    background-color: rgb(218, 218, 218);
+
+    textarea{
+        min-height: 2rem;
+    }
 
     .checklists-container {
         display: flex;
@@ -23,14 +27,36 @@
         }
     }
 
+    .priority {
+        display: flex;
+        flex-direction: column;
+        padding: .5rem;
+        gap: .2rem;
+
+        .prio{
+            border-radius: .5rem;
+            padding: .2rem .5rem;
+            cursor: pointer;
+            background-color: beige;
+        }
+    }
+
     .bottom{
         margin-top: auto;
 
         display: flex;
+        gap: 1rem;
         align-items: center;
 
         button {
             margin-left: auto;
+        }
+
+        .create-check-list{
+            background-color: green;
+            border-radius: .5rem;
+            padding: .4rem;
+            cursor: pointer;
         }
     }
 }
