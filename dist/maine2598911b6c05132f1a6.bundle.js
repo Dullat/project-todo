@@ -1631,16 +1631,23 @@ function createNoteUi(noteArray, main) {
     let noteBody = document.createElement('div');
     noteBody.classList.add('note-body');
 
-    noteArray.forEach(element => {
+    noteArray.forEach((element, index) => {
         let noteCard = document.createElement('div');
         noteCard.classList.add('note-card');
 
         noteCard.innerHTML = `
         <div class="title"><i style="font-weight: 600; opacity: .6;">${element.title}</i></div>
         <div class="note">${element.note}</div>
+        <button class="delete-note">delete</button>
         `;
 
         noteBody.appendChild(noteCard);
+
+        noteCard.querySelector('.delete-note').addEventListener('click', () => {
+            noteArray.splice(index, 1);
+            createNoteUi(noteArray, main);
+        });
+
     });
 
     noteLayout.appendChild(noteBody);
@@ -2219,4 +2226,4 @@ window.addEventListener('click', (e) => {
 
 /******/ })()
 ;
-//# sourceMappingURL=maind86c48ff6ad747050f59.bundle.js.map
+//# sourceMappingURL=maine2598911b6c05132f1a6.bundle.js.map
