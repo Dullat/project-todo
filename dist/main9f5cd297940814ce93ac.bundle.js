@@ -1699,7 +1699,7 @@ function createNoteUi(noteArray, main) {
         noteCard.classList.add('note-card');
 
         noteCard.innerHTML = `
-        <div class="title"><i style="font-weight: 600; opacity: .6;">${element.title}</i></div>
+        <div class="title"><i style="font-weight: 600;">${element.title}</i></div>
         <div class="note">${element.note}</div>
         <button class="delete-note">delete</button>
         `;
@@ -2424,4 +2424,4 @@ window.addEventListener('click', (e) => {
 
 /******/ })()
 ;
-//# sourceMappingURL=maind481c0c7de49a1cd0e32.bundle.js.map
+//# sourceMappingURL=main9f5cd297940814ce93ac.bundle.js.map

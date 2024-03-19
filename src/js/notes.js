@@ -19,7 +19,7 @@ function createNoteUi(noteArray, main) {
         noteCard.classList.add('note-card');
 
         noteCard.innerHTML = `
-        <div class="title"><i style="font-weight: 600; opacity: .6;">${element.title}</i></div>
+        <div class="title"><i style="font-weight: 600;">${element.title}</i></div>
         <div class="note">${element.note}</div>
         <button class="delete-note">delete</button>
         `;
