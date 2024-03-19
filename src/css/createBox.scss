@@ -1,6 +1,10 @@
 .box {
     position: absolute;
-    inset: 50% 0 0 0;
+    bottom: 0px;
+    min-height: 50vh;
+    max-height: 100dvh;
+    right: 0;
+    left: 0;
     z-index: 3;
 
     display: grid;
@@ -25,6 +29,7 @@
     .box-menu {
         background-color: rgb(219, 219, 219);
         overflow-y: auto;
+        padding-bottom: 1rem;
     }
 }
 

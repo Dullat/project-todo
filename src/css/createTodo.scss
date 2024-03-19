@@ -6,7 +6,7 @@
     padding: 1rem;
     background-color: rgb(218, 218, 218);
 
-    textarea{
+    textarea {
         min-height: 2rem;
     }
 
@@ -33,7 +33,7 @@
         padding: .5rem;
         gap: .2rem;
 
-        .prio{
+        .prio {
             border-radius: .5rem;
             padding: .2rem .5rem;
             cursor: pointer;
@@ -41,18 +41,25 @@
         }
     }
 
-    .bottom{
+    .bottom {
         margin-top: auto;
 
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
         align-items: center;
+
+        .date {
+            input {
+                font-size: 16px;
+            }
+        }
 
         button {
             margin-left: auto;
         }
 
-        .create-check-list{
+        .create-check-list {
             background-color: green;
             border-radius: .5rem;
             padding: .4rem;

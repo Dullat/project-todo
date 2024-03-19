@@ -23,7 +23,11 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.box {
   position: absolute;
-  inset: 50% 0 0 0;
+  bottom: 0px;
+  min-height: 50vh;
+  max-height: 100dvh;
+  right: 0;
+  left: 0;
   z-index: 3;
   display: grid;
   width: auto;
@@ -41,7 +45,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.box {
     background-color: aquamarine; }
   .box .box-menu {
     background-color: #dbdbdb;
-    overflow-y: auto; }
+    overflow-y: auto;
+    padding-bottom: 1rem; }
 
 .close-box {
   position: absolute;
@@ -52,7 +57,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.box {
 @media screen and (max-width: 1000px) {
   .box {
     position: fixed; } }
-`, "",{"version":3,"sources":["webpack://./src/css/createBox.scss"],"names":[],"mappings":"AAAA;EACI,kBAAkB;EAClB,gBAAgB;EAChB,UAAU;EAEV,aAAa;EACb,WAAW;EACX,+BAA+B;EAC/B,2BAA2B,EAAA;EAR/B;IAWQ,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,YAAY;IACZ,gBAAgB;IAChB,iBAAiB;IACjB,mBAA8B,EAAA;EAjBtC;IAqBQ,4BAA4B,EAAA;EArBpC;IAyBQ,yBAAoC;IACpC,gBAAgB,EAAA;;AAIxB;EACI,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,eAAe,EAAA;;AAGnB;EACI;IACI,eAAe,EAAA,EAClB","sourcesContent":[".box {\r\n    position: absolute;\r\n    inset: 50% 0 0 0;\r\n    z-index: 3;\r\n\r\n    display: grid;\r\n    width: auto;\r\n    grid-template-rows: min-content;\r\n    background-color: aliceblue;\r\n\r\n    .box-header{\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: space-around;\r\n        height: 4rem;\r\n        font-weight: 600;\r\n        font-size: 1.2rem;\r\n        background: rgb(196, 196, 196);\r\n    }\r\n\r\n    .box[active]{\r\n        background-color: aquamarine;\r\n    }\r\n\r\n    .box-menu {\r\n        background-color: rgb(219, 219, 219);\r\n        overflow-y: auto;\r\n    }\r\n}\r\n\r\n.close-box {\r\n    position: absolute;\r\n    top: .7rem;\r\n    left: .5rem;\r\n    cursor: pointer;\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n    .box {\r\n        position: fixed;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/createBox.scss"],"names":[],"mappings":"AAAA;EACI,kBAAkB;EAClB,WAAW;EACX,gBAAgB;EAChB,kBAAkB;EAClB,QAAQ;EACR,OAAO;EACP,UAAU;EAEV,aAAa;EACb,WAAW;EACX,+BAA+B;EAC/B,2BAA2B,EAAA;EAZ/B;IAeQ,aAAa;IACb,mBAAmB;IACnB,6BAA6B;IAC7B,YAAY;IACZ,gBAAgB;IAChB,iBAAiB;IACjB,mBAA8B,EAAA;EArBtC;IAyBQ,4BAA4B,EAAA;EAzBpC;IA6BQ,yBAAoC;IACpC,gBAAgB;IAChB,oBAAoB,EAAA;;AAI5B;EACI,kBAAkB;EAClB,UAAU;EACV,WAAW;EACX,eAAe,EAAA;;AAGnB;EACI;IACI,eAAe,EAAA,EAClB","sourcesContent":[".box {\r\n    position: absolute;\r\n    bottom: 0px;\r\n    min-height: 50vh;\r\n    max-height: 100dvh;\r\n    right: 0;\r\n    left: 0;\r\n    z-index: 3;\r\n\r\n    display: grid;\r\n    width: auto;\r\n    grid-template-rows: min-content;\r\n    background-color: aliceblue;\r\n\r\n    .box-header{\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: space-around;\r\n        height: 4rem;\r\n        font-weight: 600;\r\n        font-size: 1.2rem;\r\n        background: rgb(196, 196, 196);\r\n    }\r\n\r\n    .box[active]{\r\n        background-color: aquamarine;\r\n    }\r\n\r\n    .box-menu {\r\n        background-color: rgb(219, 219, 219);\r\n        overflow-y: auto;\r\n        padding-bottom: 1rem;\r\n    }\r\n}\r\n\r\n.close-box {\r\n    position: absolute;\r\n    top: .7rem;\r\n    left: .5rem;\r\n    cursor: pointer;\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n    .box {\r\n        position: fixed;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -166,8 +171,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.todoCreationForm {
   .todoCreationForm .bottom {
     margin-top: auto;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     align-items: center; }
+    .todoCreationForm .bottom .date input {
+      font-size: 16px; }
     .todoCreationForm .bottom button {
       margin-left: auto; }
     .todoCreationForm .bottom .create-check-list {
@@ -175,7 +183,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.todoCreationForm {
       border-radius: .5rem;
       padding: .4rem;
       cursor: pointer; }
-`, "",{"version":3,"sources":["webpack://./src/css/createTodo.scss"],"names":[],"mappings":"AAAA;EACI,aAAa;EACb,sBAAsB;EACtB,UAAU;EACV,YAAY;EACZ,aAAa;EACb,yBAAoC,EAAA;EANxC;IASQ,gBAAgB,EAAA;EATxB;IAaQ,aAAa;IACb,sBAAsB;IACtB,UAAU,EAAA;IAflB;MAkBY,WAAW;MAEX,aAAa;MACb,SAAS,EAAA;MArBrB;QAwBgB,YAAY,EAAA;EAxB5B;IA8BQ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,UAAU,EAAA;IAjClB;MAoCY,oBAAoB;MACpB,oBAAoB;MACpB,eAAe;MACf,uBAAuB,EAAA;EAvCnC;IA4CQ,gBAAgB;IAEhB,aAAa;IACb,SAAS;IACT,mBAAmB,EAAA;IAhD3B;MAmDY,iBAAiB,EAAA;IAnD7B;MAuDY,uBAAuB;MACvB,oBAAoB;MACpB,cAAc;MACd,eAAe,EAAA","sourcesContent":[".todoCreationForm {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: .7rem;\r\n    height: 100%;\r\n    padding: 1rem;\r\n    background-color: rgb(218, 218, 218);\r\n\r\n    textarea{\r\n        min-height: 2rem;\r\n    }\r\n\r\n    .checklists-container {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: .5rem;\r\n\r\n        .check-list-box {\r\n            width: 100%;\r\n\r\n            display: flex;\r\n            gap: 1rem;\r\n\r\n            .checkList {\r\n                flex-grow: 1;\r\n            }\r\n        }\r\n    }\r\n\r\n    .priority {\r\n        display: flex;\r\n        flex-direction: column;\r\n        padding: .5rem;\r\n        gap: .2rem;\r\n\r\n        .prio{\r\n            border-radius: .5rem;\r\n            padding: .2rem .5rem;\r\n            cursor: pointer;\r\n            background-color: beige;\r\n        }\r\n    }\r\n\r\n    .bottom{\r\n        margin-top: auto;\r\n\r\n        display: flex;\r\n        gap: 1rem;\r\n        align-items: center;\r\n\r\n        button {\r\n            margin-left: auto;\r\n        }\r\n\r\n        .create-check-list{\r\n            background-color: green;\r\n            border-radius: .5rem;\r\n            padding: .4rem;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/createTodo.scss"],"names":[],"mappings":"AAAA;EACI,aAAa;EACb,sBAAsB;EACtB,UAAU;EACV,YAAY;EACZ,aAAa;EACb,yBAAoC,EAAA;EANxC;IASQ,gBAAgB,EAAA;EATxB;IAaQ,aAAa;IACb,sBAAsB;IACtB,UAAU,EAAA;IAflB;MAkBY,WAAW;MAEX,aAAa;MACb,SAAS,EAAA;MArBrB;QAwBgB,YAAY,EAAA;EAxB5B;IA8BQ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,UAAU,EAAA;IAjClB;MAoCY,oBAAoB;MACpB,oBAAoB;MACpB,eAAe;MACf,uBAAuB,EAAA;EAvCnC;IA4CQ,gBAAgB;IAEhB,aAAa;IACb,eAAe;IACf,SAAS;IACT,mBAAmB,EAAA;IAjD3B;MAqDgB,eAAe,EAAA;IArD/B;MA0DY,iBAAiB,EAAA;IA1D7B;MA8DY,uBAAuB;MACvB,oBAAoB;MACpB,cAAc;MACd,eAAe,EAAA","sourcesContent":[".todoCreationForm {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: .7rem;\r\n    height: 100%;\r\n    padding: 1rem;\r\n    background-color: rgb(218, 218, 218);\r\n\r\n    textarea {\r\n        min-height: 2rem;\r\n    }\r\n\r\n    .checklists-container {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: .5rem;\r\n\r\n        .check-list-box {\r\n            width: 100%;\r\n\r\n            display: flex;\r\n            gap: 1rem;\r\n\r\n            .checkList {\r\n                flex-grow: 1;\r\n            }\r\n        }\r\n    }\r\n\r\n    .priority {\r\n        display: flex;\r\n        flex-direction: column;\r\n        padding: .5rem;\r\n        gap: .2rem;\r\n\r\n        .prio {\r\n            border-radius: .5rem;\r\n            padding: .2rem .5rem;\r\n            cursor: pointer;\r\n            background-color: beige;\r\n        }\r\n    }\r\n\r\n    .bottom {\r\n        margin-top: auto;\r\n\r\n        display: flex;\r\n        flex-wrap: wrap;\r\n        gap: 1rem;\r\n        align-items: center;\r\n\r\n        .date {\r\n            input {\r\n                font-size: 16px;\r\n            }\r\n        }\r\n\r\n        button {\r\n            margin-left: auto;\r\n        }\r\n\r\n        .create-check-list {\r\n            background-color: green;\r\n            border-radius: .5rem;\r\n            padding: .4rem;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1406,6 +1414,29 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/js/about.js":
+/*!*************************!*\
+  !*** ./src/js/about.js ***!
+  \*************************/
+/***/ ((module) => {
+
+function createAbout(main) {
+    while (main.firstElementChild) {
+        main.removeChild(main.firstElementChild);
+    };
+
+    let about = document.createElement('div');
+
+    about.innerHTML = `<p style="padding: 1rem; font-weight: 600; color: green; font-size: 1.2rem; padding-top: 5rem;">I developed this project independently, without relying on tutorials or guides. While this approach may have led to some mistakes, it allowed me to focus on building robust logic and improving my programming skills. Although the user interface may not be polished, the primary goal of this project was to refine my logic and problem-solving abilities </p>`
+
+    main.appendChild(about);
+
+}
+
+module.exports = { createAbout };
+
+/***/ }),
+
 /***/ "./src/js/coming.js":
 /*!**************************!*\
   !*** ./src/js/coming.js ***!
@@ -1413,7 +1444,7 @@ module.exports = styleTagTransform;
 /***/ ((module) => {
 
 function createComingUi(todoArray, main) {
-    if (main.firstElementChild) {
+    while (main.firstElementChild) {
         main.removeChild(main.firstElementChild);
     }
 
@@ -1549,7 +1580,7 @@ module.exports = {createNote};
 /***/ ((module) => {
 
 function createTaskUi(todoArray, main) {
-    if (main.firstElementChild) {
+    while (main.firstElementChild) {
         main.removeChild(main.firstElementChild);
     }
 
@@ -1648,7 +1679,7 @@ module.exports = { createTaskUi };
 /***/ ((module) => {
 
 function createNoteUi(noteArray, main) {
-    if (main.firstElementChild) {
+    while (main.firstElementChild) {
         main.removeChild(main.firstElementChild);
     }
 
@@ -1690,6 +1721,125 @@ module.exports = { createNoteUi };
 
 /***/ }),
 
+/***/ "./src/js/searchUi.js":
+/*!****************************!*\
+  !*** ./src/js/searchUi.js ***!
+  \****************************/
+/***/ ((module) => {
+
+function listSearched(todoArray, sortedArray, main, inboxLayout) {
+    while(inboxLayout.firstElementChild){
+        inboxLayout.removeChild(inboxLayout.firstElementChild)
+    };
+    sortedArray.forEach((element, index) => {
+        let taskDiv = document.createElement('div');
+        taskDiv.classList.add('task');
+
+        taskDiv.innerHTML = `
+        <div class="top">
+            <p class="title">${element.title}</p>
+            <p class="date">${element.dueDate.toLocaleDateString('en-US', { day: 'numeric', month: 'short' })}</p>
+            <p class="priority">${element.priority}</p>
+            <div class="open-close" style="position: relative">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ssvg" height="25" width="25" viewBox="0 0 24 24"><title>email-open</title><path d="M21,9V18C21,19.66 19.66,21 18,21H5C3.34,21 2,19.66 2,18V9C2,7.89 2.6,6.92 3.5,6.4V6.4L11.5,1.78L19.5,6.4V6.4C20.4,6.92 21,7.89 21,9M3.72,7.47L11.5,12.5L19.28,7.47L11.5,2.93L3.72,7.47M11.5,13.71L3.13,8.28C3.05,8.5 3,8.75 3,9V18C3,19.1 3.9,20 5,20H18C19.1,20 20,19.1 20,18V9C20,8.75 19.95,8.5 19.87,8.28L11.5,13.71Z" /></svg>
+                <div class="ssvg" style="position: absolute; height: 100%; width: 100%;"></div>
+            </div>
+        </div>
+        <div class="hidden">
+            <button class="delete-task">Delete</button>
+            <div class="check-lists"></div>
+            <div class="note">Note: ${element.note}</div>
+        </div>
+        `;
+
+        inboxLayout.appendChild(taskDiv);
+
+        element.checkList.forEach((el, i) => {
+            let bar = document.createElement('div');
+            bar.classList.add('list');
+            bar.innerHTML = `
+            <div>${el.value}</div>
+            <input type="checkbox">
+            `;
+
+            let checkbox = bar.querySelector('input[type="checkbox"]');
+            if (el.checked) {
+                checkbox.checked = true;
+            }
+
+            taskDiv.querySelector('.check-lists').appendChild(bar);
+
+            checkbox.addEventListener('click', () => {
+                if (checkbox.checked) {
+                    el.checked = true;
+                } else if (!checkbox.checked) el.checked = false;
+            });
+        });
+
+        taskDiv.querySelector('.delete-task').addEventListener('click', () => {
+            todoArray.forEach((array, indexofarray) => {
+                if (array.index === element.index) {
+                    todoArray.splice(indexofarray, 1);
+                }
+            });
+            createTaskUi(todoArray, main);
+            console.log(todoArray);
+        });
+    });
+
+    main.appendChild(inboxLayout);
+
+    inboxLayout.addEventListener("click", (event) => {
+        if (event.target.classList.contains('ssvg')) {
+            event.target.closest('.task').querySelector('.hidden').classList.toggle('active');
+        }
+    });
+};
+
+////
+
+function uiCreateSearch(todoArray, main) {
+    if (main.firstElementChild) {
+        main.removeChild(main.firstElementChild);
+    }
+
+    // Create a new inboxLayout div for each call
+
+    let inboxHeader = document.createElement('div');
+    inboxHeader.classList.add('inbox-header');
+
+    let inboxLayout = document.createElement('div');
+    inboxLayout.classList.add('inbox-layout');
+
+
+    inboxHeader.innerHTML = `
+    <p>SEARCH TODO</p>
+    <input type="text" id="search" placeholder="search">
+    `;
+
+    main.appendChild(inboxHeader);
+
+    let sortedArray = [];
+    
+
+    inboxHeader.querySelector('#search').addEventListener('input', (e) => {
+        const searchTerm = e.target.value.trim();
+        console.log(searchTerm);
+        todoArray.forEach(searchElament => {
+            if (searchElament.title.includes(searchTerm)) {
+                sortedArray.push(searchElament);
+                console.log("jk",sortedArray);
+            }
+        });
+        listSearched(todoArray, sortedArray, main, inboxLayout);
+        sortedArray = [];
+    });
+};
+
+module.exports = { uiCreateSearch };
+
+/***/ }),
+
 /***/ "./src/js/today.js":
 /*!*************************!*\
   !*** ./src/js/today.js ***!
@@ -1697,7 +1847,7 @@ module.exports = { createNoteUi };
 /***/ ((module) => {
 
 function createTodayUi(todoArray, main) {
-    if (main.firstElementChild) {
+    while (main.firstElementChild) {
         main.removeChild(main.firstElementChild);
     }
 
@@ -1861,10 +2011,9 @@ todoCreationForm.innerHTML = `
 
 <div class="bottom">
     <div class="date">
-        <label for="dateInput">Select a date:</label>
         <input type="date" id="dateInput" name="dateInput">
     </div>
-    <div class="create-check-list" onclick="addListBox()">create-check-list</div>
+    <div class="create-check-list" onclick="addListBox()">Checklist</div>
     <button type="submit">create</button>
 </div>
 `;
@@ -2081,6 +2230,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_createNote_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_js_createNote_js__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _js_notes_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./js/notes.js */ "./src/js/notes.js");
 /* harmony import */ var _js_notes_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_js_notes_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _js_searchUi_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/searchUi.js */ "./src/js/searchUi.js");
+/* harmony import */ var _js_searchUi_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_js_searchUi_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _js_about__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./js/about */ "./src/js/about.js");
+/* harmony import */ var _js_about__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_js_about__WEBPACK_IMPORTED_MODULE_16__);
+
+
 
 
 
@@ -2107,16 +2262,18 @@ let todoArray = [];
 let noteArray = [];
 let todoIndex = 0;
 let noteIndex = 0;
+let search = document.querySelector('.search');
 let inbox = document.querySelector('.inbox');
 let today = document.querySelector('.today');
 let coming = document.querySelector('.upcoming');
 let notes = document.querySelector('.notes');
+let about = document.querySelector('.about');
 let primaryNav = document.querySelector('.primary-nav');
 
 
 addBtn.addEventListener('click', () => {
     wrapper.appendChild(_js_uiCreateBox_js__WEBPACK_IMPORTED_MODULE_8__.box);
-    if (!document.querySelector('.box-menu').firstElementChild){
+    if (!document.querySelector('.box-menu').firstElementChild) {
         document.querySelector('.box-menu').appendChild(_js_uiCreateTodo_js__WEBPACK_IMPORTED_MODULE_7__.todoCreationForm);
     }
     document.querySelector('.close-box').addEventListener('click', () => {
@@ -2155,7 +2312,7 @@ _js_uiCreateTodo_js__WEBPACK_IMPORTED_MODULE_7__.todoCreationForm.addEventListen
     let sendChecklist = [];
 
     checkListArray.forEach(e => {
-        sendChecklist.push({value: e.value, checked: false});
+        sendChecklist.push({ value: e.value, checked: false });
     })
 
     console.log(sendChecklist);
@@ -2210,7 +2367,11 @@ _js_uiCreateNote_js__WEBPACK_IMPORTED_MODULE_12__.createNoteForm.addEventListene
     console.log(noteArray);
 })
 
-//
+// navigation bar
+search.addEventListener('click', () => {
+    ;(0,_js_searchUi_js__WEBPACK_IMPORTED_MODULE_15__.uiCreateSearch)(todoArray, main);
+})
+
 inbox.addEventListener('click', () => {
     ;(0,_js_inbox_js__WEBPACK_IMPORTED_MODULE_9__.createTaskUi)(todoArray, main);
 })
@@ -2225,6 +2386,10 @@ coming.addEventListener('click', () => {
 
 notes.addEventListener('click', () => {
     ;(0,_js_notes_js__WEBPACK_IMPORTED_MODULE_14__.createNoteUi)(noteArray, main);
+})
+
+about.addEventListener('click', () => {
+    ;(0,_js_about__WEBPACK_IMPORTED_MODULE_16__.createAbout)(main);
 })
 
 primaryNav.querySelectorAll('li').forEach(e => {
@@ -2251,7 +2416,7 @@ document.querySelector('.burger').addEventListener('click', () => {
 })
 
 window.addEventListener('click', (e) => {
-    if (e.target !== document.querySelector('.side-bar') && e.target !== document.querySelector('.burger')){
+    if (e.target !== document.querySelector('.side-bar') && e.target !== document.querySelector('.burger')) {
         document.querySelector('.side-bar').classList.remove('active');
     }
 })
@@ -2259,4 +2424,4 @@ window.addEventListener('click', (e) => {
 
 /******/ })()
 ;
-//# sourceMappingURL=mainaad32b942f7f412ee52a.bundle.js.map
+//# sourceMappingURL=maind481c0c7de49a1cd0e32.bundle.js.map

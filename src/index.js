@@ -14,6 +14,8 @@ import { createComingUi } from './js/coming.js';
 import { createNoteForm } from './js/uiCreateNote.js';
 import { createNote } from './js/createNote.js';
 import { createNoteUi } from './js/notes.js';
+import { uiCreateSearch } from './js/searchUi.js';
+import { createAbout } from './js/about';
 window.addListBox = addListBox;
 
 let addBtn = document.querySelector('.add-new');
@@ -24,16 +26,18 @@ let todoArray = [];
 let noteArray = [];
 let todoIndex = 0;
 let noteIndex = 0;
+let search = document.querySelector('.search');
 let inbox = document.querySelector('.inbox');
 let today = document.querySelector('.today');
 let coming = document.querySelector('.upcoming');
 let notes = document.querySelector('.notes');
+let about = document.querySelector('.about');
 let primaryNav = document.querySelector('.primary-nav');
 
 
 addBtn.addEventListener('click', () => {
     wrapper.appendChild(box);
-    if (!document.querySelector('.box-menu').firstElementChild){
+    if (!document.querySelector('.box-menu').firstElementChild) {
         document.querySelector('.box-menu').appendChild(todoCreationForm);
     }
     document.querySelector('.close-box').addEventListener('click', () => {
@@ -72,7 +76,7 @@ todoCreationForm.addEventListener('submit', (e) => {
     let sendChecklist = [];
 
     checkListArray.forEach(e => {
-        sendChecklist.push({value: e.value, checked: false});
+        sendChecklist.push({ value: e.value, checked: false });
     })
 
     console.log(sendChecklist);
@@ -127,7 +131,11 @@ createNoteForm.addEventListener('submit', (e) => {
     console.log(noteArray);
 })
 
-//
+// navigation bar
+search.addEventListener('click', () => {
+    uiCreateSearch(todoArray, main);
+})
+
 inbox.addEventListener('click', () => {
     createTaskUi(todoArray, main);
 })
@@ -142,6 +150,10 @@ coming.addEventListener('click', () => {
 
 notes.addEventListener('click', () => {
     createNoteUi(noteArray, main);
+})
+
+about.addEventListener('click', () => {
+    createAbout(main);
 })
 
 primaryNav.querySelectorAll('li').forEach(e => {
@@ -168,7 +180,7 @@ document.querySelector('.burger').addEventListener('click', () => {
 })
 
 window.addEventListener('click', (e) => {
-    if (e.target !== document.querySelector('.side-bar') && e.target !== document.querySelector('.burger')){
+    if (e.target !== document.querySelector('.side-bar') && e.target !== document.querySelector('.burger')) {
         document.querySelector('.side-bar').classList.remove('active');
     }
 })

@@ -37,8 +37,12 @@
 .todoCreationForm .bottom {
   margin-top: auto;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+}
+.todoCreationForm .bottom .date input {
+  font-size: 16px;
 }
 .todoCreationForm .bottom button {
   margin-left: auto;

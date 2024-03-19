@@ -1,5 +1,5 @@
 function createNoteUi(noteArray, main) {
-    if (main.firstElementChild) {
+    while (main.firstElementChild) {
         main.removeChild(main.firstElementChild);
     }
 

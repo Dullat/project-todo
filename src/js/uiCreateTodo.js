@@ -18,10 +18,9 @@ todoCreationForm.innerHTML = `
 
 <div class="bottom">
     <div class="date">
-        <label for="dateInput">Select a date:</label>
         <input type="date" id="dateInput" name="dateInput">
     </div>
-    <div class="create-check-list" onclick="addListBox()">create-check-list</div>
+    <div class="create-check-list" onclick="addListBox()">Checklist</div>
     <button type="submit">create</button>
 </div>
 `;
